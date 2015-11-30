@@ -16,6 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         messageHandler.sendEmptyMessageDelayed(0, 2000);
+        
     }
 
     private Handler messageHandler = new Handler() {
