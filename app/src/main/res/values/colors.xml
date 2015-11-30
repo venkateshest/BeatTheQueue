@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#D13C3C</color>
     <color name="white">#ffffff</color>
     <color name="login_username">#1D1D26</color>
+    <color name="color_D13C3C">#D13C3C</color>
+    <color name="color_848383">#848383</color>
+    <color name="color_525663">#525663</color>
+
 </resources>
