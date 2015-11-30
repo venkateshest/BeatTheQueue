@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@color/color_848383"
+        android:id="@+id/profile_pic"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/header_layout"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/profile_pic"
+        android:layout_centerHorizontal="true">
+        <com.hackathon.dropbydrop.reusable.CustomTextView
+            android:id="@+id/tv_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_login_logo"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="Saneet Naik"
+            android:textColor="@color/color_525663"
+            android:textSize="28dp"
+            app:font="@string/avenir_book" />
+        <com.hackathon.dropbydrop.reusable.CustomTextView
+            android:id="@+id/tv_profile_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/iv_login_logo"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="Bangalore,Karnataka"
+            android:textColor="@color/color_848383"
+            android:textSize="18dp"
+            app:font="@string/avenir_book" />
+    </LinearLayout>
+
+</RelativeLayout>
