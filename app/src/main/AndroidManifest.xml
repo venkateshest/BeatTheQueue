@@ -3,6 +3,10 @@
     package="com.hackathon.dropbydrop" >
 
 
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22"/>
+
     <!-- GCM connects to Google Services. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- GCM requires a Google account. -->
