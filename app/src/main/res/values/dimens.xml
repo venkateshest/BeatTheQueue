@@ -6,4 +6,6 @@
     <dimen name="text_heading_size">25sp</dimen>
     <dimen name="text_normal_size">15sp</dimen>
     <dimen name="text_login_small_size">12sp</dimen>
+    <dimen name="background_text_size">12sp</dimen>
+    <dimen name="background_ans_text_size">12sp</dimen>
 </resources>

@@ -3,7 +3,7 @@
 
     <attr name="font" format="string" />
 
-    <declare-styleable name="com.cryptall.CustomView">
+    <declare-styleable name="com.dropByDrop.CustomView">
         <attr name="font" />
     </declare-styleable>
     <declare-styleable name="ViewPagerIndicator">

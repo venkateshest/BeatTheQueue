@@ -31,8 +31,8 @@ public class CustomEditText extends EditText {
 	 */
 	public CustomEditText(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		UIUtils.setCustomFont(this, context, attrs, R.styleable.com_cryptall_CustomView,
-				R.styleable.com_cryptall_CustomView_font);
+		UIUtils.setCustomFont(this, context, attrs, R.styleable.com_dropByDrop_CustomView,
+				R.styleable.com_dropByDrop_CustomView_font);
 		// this.setLongClickable(false);
 		// this.setTextIsSelectable(false);
 		// this.setCustomSelectionActionModeCallback(customCallback);
@@ -50,8 +50,8 @@ public class CustomEditText extends EditText {
 	 */
 	public CustomEditText(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		UIUtils.setCustomFont(this, context, attrs, R.styleable.com_cryptall_CustomView,
-				R.styleable.com_cryptall_CustomView_font);
+		UIUtils.setCustomFont(this, context, attrs, R.styleable.com_dropByDrop_CustomView,
+				R.styleable.com_dropByDrop_CustomView_font);
 		// this.setLongClickable(false);
 		// this.setTextIsSelectable(false);
 		// this.setCustomSelectionActionModeCallback(customCallback);
