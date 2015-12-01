@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hackathon.dropbydrop" >
-
+    package="com.hackathon.dropbydrop">
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="22"/>
+        android:targetSdkVersion="22" />
 
     <!-- GCM connects to Google Services. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- GCM requires a Google account. -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <!-- Keeps the processor from sleeping when a message is received.
-    -->
+    <!--  Keeps the processor from sleeping when a message is received. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <!--
@@ -24,10 +22,11 @@
     <permission
         android:name="com.google.android.gcm.demo.app.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.google.android.gcm.demo.app.permission.C2D_MESSAGE" />
-    <!-- This app has permission to register and receive data message.
-    -->
+    <!--  This app has permission to register and receive data message. -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
     <permission
         android:name="com.hackathon.dropbydrop.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
@@ -35,6 +34,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -44,7 +47,9 @@
         <activity
             android:name=".activities.SplashActivity"
             android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait"
             android:theme="@style/AppTheme.NoActionBar">
+
 
         </activity>
         <activity
@@ -79,27 +84,33 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <activity
             android:name=".activities.VanGoActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <!--
           BroadcastReceiver that will receive intents from GCM
           services and handle them to the custom IntentService.
 
           The com.google.android.c2dm.permission.SEND permission is necessary
-          so only GCM services can send data messages for the app.-->
-        <receiver android:name=".reusable.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND"><intent-filter>
-        <!-- Receives the actual messages. -->
-        <action android:name="com.google.android.c2dm.intent.RECEIVE"/><!-- Receives the registration id. -->
-        <action android:name="com.google.android.c2dm.intent.REGISTRATION"/><category android:name="com.google.android.gcm.demo.app"/></intent-filter></receiver><!--
+          so only GCM services can send data messages for the app.
+        -->
+        <receiver
+            android:name=".reusable.gcm.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.google.android.gcm.demo.app" />
+            </intent-filter>
+        </receiver>
+        <!--
           Application-specific subclass of GCMBaseIntentService that will
           handle received messages.
 
@@ -110,6 +121,14 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyC0VyL8AP1id0BJabusZEAeJBbD6zFYXJE" />
+        <service android:name=".reusable.gcm.GcmIntentService" />
+
+        <activity
+            android:name=".activities.BackGroundActivity"
+            android:label="@string/title_activity_back_ground"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

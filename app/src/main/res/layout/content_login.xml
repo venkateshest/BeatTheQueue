@@ -114,4 +114,10 @@
         android:textColor="#E54848"
         android:textSize="@dimen/text_login_small_size"
         app:font="@string/avenir_roman" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_sign_up"
+        android:background="@color/white" />
 </RelativeLayout>

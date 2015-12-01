@@ -18,4 +18,17 @@
     <string name="lbl_hint_pwd">Enter password</string>
     <string name="lbl_forgot_pwd">FORGOT PASSWORD</string>
     <string name="lbl_sign_up">SIGN UP</string>
+    <string name="title_activity_back_ground">BackGroundActivity</string>
+    <string name="lbl_background_details">Background Details</string>
+    <string name="lbl_height">HEIGHT</string>
+    <string name="lbl_weight">WEIGHT</string>
+    <string name="lbl_location">LOCATION</string>
+    <string name="lbl_empty_stomach">EMPTY STOMACH</string>
+    <string name="lbl_yes">YES</string>
+    <string name="lbl_indulgence"><![CDATA[INDULGENCE IN DRUGS & NARCOTICS]]></string>
+    <string name="lbl_recent_surgeries">ANY RECENT SURGERIES</string>
+    <string name="lbl_alcohol_consumption">ALCOHOL CONSUMPTION</string>
+    <string name="lbl_any_diseases">ANY DISEASES?</string>
+    <string name="lbl_hint_disease_details">Mention the name here, seperated by commas.</string>
+    <string name="lbl_done">DONE</string>
 </resources>

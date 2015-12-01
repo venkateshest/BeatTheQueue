@@ -42,8 +42,8 @@ public class CustomTextView extends TextView {
 	 */
 	public CustomTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		UIUtils.setCustomFont(this, context, attrs, R.styleable.com_cryptall_CustomView,
-				R.styleable.com_cryptall_CustomView_font);
+		UIUtils.setCustomFont(this, context, attrs, R.styleable.com_dropByDrop_CustomView,
+				R.styleable.com_dropByDrop_CustomView_font);
 		useDefaultEmoticons = UIUtils.isVersionKitkatOrAbove();
 	}
 
@@ -63,8 +63,8 @@ public class CustomTextView extends TextView {
 	 */
 	public CustomTextView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		UIUtils.setCustomFont(this, context, attrs, R.styleable.com_cryptall_CustomView,
-				R.styleable.com_cryptall_CustomView_font);
+		UIUtils.setCustomFont(this, context, attrs, R.styleable.com_dropByDrop_CustomView,
+				R.styleable.com_dropByDrop_CustomView_font);
 		useDefaultEmoticons = UIUtils.isVersionKitkatOrAbove();
 	}
 
