@@ -5,7 +5,7 @@ android {
         debug {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
-            storeFile file('C:/Users/SRIMADHU/AndroidStudioProjects/Hackaton/DropbyDrop1/dropByDrop/debug.keystore')
+            storeFile file('D:/dropbydrop/dropByDrop/debug.keystore')
             storePassword 'android'
         }
     }

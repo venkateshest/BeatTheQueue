@@ -118,11 +118,16 @@ public class VanGoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(VanGoActivity.this, BackGroundActivity.class);
-                intent.putExtra(StringConstants.DONATE_DATE, mNotificationDTO.getDateTime());
-                intent.putExtra(StringConstants.DONATE_FROM_TIME, mNotificationDTO.getDateTime());
-                intent.putExtra(StringConstants.DONATE_TO_TIME, mNotificationDTO.getDateTime());
-                intent.putExtra(StringConstants.DONATE_AT_LAT, "");
-                intent.putExtra(StringConstants.DONATE_AT_LONG, "");
+                intent.putExtra(StringConstants.DONATE_DATE, mNotificationDTO.getDate());
+                intent.putExtra(StringConstants.DONATE_FROM_TIME, mNotificationDTO.getFromTime());
+                intent.putExtra(StringConstants.DONATE_TO_TIME, mNotificationDTO.getToTime());
+                intent.putExtra(StringConstants.DONATE_AT_LAT, mNotificationDTO.getLat());
+                intent.putExtra(StringConstants.DONATE_AT_LONG, mNotificationDTO.getLongt());
+                intent.putExtra(StringConstants.DONATE_NAME, mNotificationDTO.getName());
+                intent.putExtra(StringConstants.DONATE_ADDRESS, mNotificationDTO.getAddress());
+                intent.putExtra(StringConstants.DONATE_PHONE_NO, mNotificationDTO.getPhoneNo());
+                intent.putExtra(StringConstants.DONATE_STATUS, mNotificationDTO.getStatus());
+                intent.putExtra(StringConstants.DONATE_BLOOD_GROUP, mNotificationDTO.getBloodGroup());
                 startActivity(intent);
             }
         });

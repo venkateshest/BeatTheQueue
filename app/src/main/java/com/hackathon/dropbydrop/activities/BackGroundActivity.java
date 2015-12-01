@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ public class BackGroundActivity extends AppCompatActivity implements OnClickList
     private TextView mTxtViewRecentSur;
     private TextView mTxtViewAlcohol;
     private Button mBtnDone;
+    private EditText mAddresss;
     private DRDSharedPreferences drdSharedPreferences;
 
     @Override
@@ -55,6 +57,7 @@ public class BackGroundActivity extends AppCompatActivity implements OnClickList
 
     private void init() {
         initHeader();
+        Intent intent = getIntent();
         drdSharedPreferences = new DRDSharedPreferences(this);
         mTextViewDonarAge = (TextView) findViewById(R.id.tv_donar_age);
         mTextViewDonarBloodGroup = (TextView) findViewById(R.id.tv_donar_blood_group);
@@ -62,6 +65,8 @@ public class BackGroundActivity extends AppCompatActivity implements OnClickList
         mImgViewDonarImage = (ImageView) findViewById(R.id.iv_donar_image);
         mSwitchEmptyStomach = (Switch)findViewById(R.id.swtich_empty_stomach);
         mTxtViewEmptySto = (TextView)findViewById(R.id.tv_yes_empty_stomach);
+        mAddresss=(EditText)findViewById(R.id.et_donar_location);
+        mAddresss.setText(intent.getStringExtra(StringConstants.DONATE_ADDRESS)!=null?intent.getStringExtra(StringConstants.DONATE_ADDRESS):"3rd cross,manjunatha layour,Marathahalli");
         mSwitchEmptyStomach.setChecked(true);
         mSwitchEmptyStomach.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -138,12 +143,12 @@ public class BackGroundActivity extends AppCompatActivity implements OnClickList
                 if(drdSharedPreferences.getString(StringConstants.PREF_APP_TYPE, "").contains(StringConstants.APP_TYPE_NON_AMBULANCE)) {
                     Intent intent = getIntent();
                     NotificationDTO dto = new NotificationDTO();
-                    dto.setName("Srikanth");
-                    dto.setAddress("JP nagar, Bangalore");
-                    dto.setPhoneNo("+91-9036546774");
-                    dto.setBloodGroup("B+ve blood donor");
+                    dto.setName(intent.getStringExtra(StringConstants.DONATE_NAME)!=null?intent.getStringExtra(StringConstants.DONATE_NAME):"Srikanth");
+                    dto.setAddress(intent.getStringExtra(StringConstants.DONATE_ADDRESS)!=null?intent.getStringExtra(StringConstants.DONATE_ADDRESS):"3rd cross,manjunatha layour,Marathahalli");
+                    dto.setPhoneNo(intent.getStringExtra(StringConstants.DONATE_PHONE_NO)!=null?intent.getStringExtra(StringConstants.DONATE_PHONE_NO):"+91-95673837373");
+                    dto.setBloodGroup(intent.getStringExtra(StringConstants.DONATE_BLOOD_GROUP)!=null?intent.getStringExtra(StringConstants.DONATE_BLOOD_GROUP):"O+");
                     dto.setLat(DropByDropApplication.currentLat);
-                    dto.setStatus("Pending");
+                    dto.setStatus(intent.getStringExtra(StringConstants.DONATE_STATUS)!=null?intent.getStringExtra(StringConstants.DONATE_STATUS):"Pending");
                     dto.setLongt(DropByDropApplication.currentLong);
                     dto.setDate(intent.getStringExtra(StringConstants.DONATE_DATE));
                     dto.setToTime(intent.getStringExtra(StringConstants.DONATE_TO_TIME));
@@ -179,9 +184,10 @@ public class BackGroundActivity extends AppCompatActivity implements OnClickList
     }
 
     private void setDonarDetails() {
-        mTextViewDonarAge.setText("asdfasdf");
-        mTextViewDonarBloodGroup.setText("sdfsa");
-        mTextViewDonarName.setText("dlsfjoas");
+        Intent intent=getIntent();
+        mTextViewDonarAge.setText("36 Age");
+        mTextViewDonarBloodGroup.setText(intent.getStringExtra(StringConstants.DONATE_BLOOD_GROUP)!=null?intent.getStringExtra(StringConstants.DONATE_BLOOD_GROUP):"O+");
+        mTextViewDonarName.setText(intent.getStringExtra(StringConstants.DONATE_NAME)!=null?intent.getStringExtra(StringConstants.DONATE_NAME):"Srikanth");
         mImgViewDonarImage.setBackground(getDrawable(R.mipmap.lets_save_a_life));
     }
 

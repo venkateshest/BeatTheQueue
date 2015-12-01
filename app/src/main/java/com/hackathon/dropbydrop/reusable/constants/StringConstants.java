@@ -33,4 +33,9 @@ public class StringConstants {
     public static String DONATE_TO_TIME = "DONATE_TO_TIME";
     public static String DONATE_AT_LAT = "DONATE_AT_LAT";
     public static String DONATE_AT_LONG = "DONATE_AT_LONG";
+    public static String DONATE_NAME = "DONATE_NAME";
+    public static String DONATE_ADDRESS = "DONATE_ADDRESS";
+    public static String DONATE_PHONE_NO = "DONATE_PHONE";
+    public static String DONATE_BLOOD_GROUP = "DONATE_BLOOD_GROUP";
+    public static String DONATE_STATUS = "DONATE_STATUS";
 }
