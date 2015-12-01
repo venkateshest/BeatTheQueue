@@ -13,53 +13,54 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.hackathon.dropbydrop.R;
+import com.hackathon.dropbydrop.data.NotificationDTO;
+import com.hackathon.dropbydrop.utils.Constants;
 
 import java.util.List;
 
 
-public class VanHouseAdapter extends ArrayAdapter<String> {
+public class VanHouseAdapter extends ArrayAdapter<NotificationDTO> {
 
     private final Context context;
+    private final String type;
 
-    public VanHouseAdapter(final Context context, final int resourceId, final List<String> items) {
+
+    public VanHouseAdapter(final Context context, final int resourceId, final List<NotificationDTO> items, String type) {
         super(context, resourceId, items);
         this.context = context;
+        this.type = type;
     }
 
     public View getView(final int position, final View convertView, final ViewGroup parent) {
 
-        ViewHolder holder = null;
-        final String rowItem = getItem(position);
-        View view = convertView;
+
+        final NotificationDTO rowItem = getItem(position);
+
 
         final LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
-        if (view == null) {
-            view = mInflater.inflate(R.layout.item_details, null);
-            holder = new ViewHolder(view);
-            view.setTag(holder);
 
-        } else {
-            holder = (ViewHolder) view.getTag();
-        }
+           View view = mInflater.inflate(R.layout.item_details, null);
+
+            TextView txtDonarName = (TextView) view.findViewById(R.id.tv_donor_name);
+            TextView txtDonarTime = (TextView) view.findViewById(R.id.tv_item_schedule_time);
+            TextView txtDonarAddress = (TextView) view.findViewById(R.id.tv_item_addres);
+
+
+                if (type.equalsIgnoreCase(Constants.NOTIFICATIONS)) {
+                    txtDonarName.setText(rowItem.getName());
+                    txtDonarTime.setText("8-9 Am");
+                    txtDonarAddress.setText(rowItem.getBloodGroup());
+                } else if (type.equalsIgnoreCase(Constants.VANNOTIFICATIONHOME)) {
+                    txtDonarName.setText(rowItem.getName());
+                    txtDonarTime.setText("8-9 Am");
+                    txtDonarAddress.setText(rowItem.getAddress());
+                }
 
 
         return view;
     }
 
-    /* private view holder class */
-    class ViewHolder {
 
-        TextView txtDonarName;
-        TextView txtDonarTime;
-        TextView txtDonarAddress;
-
-
-        public ViewHolder(final View view) {
-            txtDonarName=(TextView)view.findViewById(R.id.tv_donar_name);
-            txtDonarTime=(TextView)view.findViewById(R.id.tv_item_schedule_time);
-            txtDonarAddress=(TextView)view.findViewById(R.id.tv_item_addres);
-        }
-    }
 }
 

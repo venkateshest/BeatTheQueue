@@ -29,12 +29,14 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/ll_pending"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/iv_pending"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -66,12 +68,14 @@ android:layout_marginBottom="8dp"
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_completed"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/iv_completed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -103,12 +107,14 @@ android:layout_marginBottom="8dp"
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_re_schedule"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/iv_re_schedule"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -142,7 +148,10 @@ android:layout_marginBottom="8dp"
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:id="@+id/listview_van_home"
+            android:scrollbars="none"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/ll_detail" />
     </RelativeLayout>

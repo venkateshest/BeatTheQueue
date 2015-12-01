@@ -27,7 +27,7 @@ public class VanGoActivity extends AppCompatActivity {
     EditText location;
     TextView phoneNo;
     Button start;
-    VanHouseAdapter mVanHouseAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
