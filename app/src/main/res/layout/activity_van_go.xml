@@ -26,7 +26,7 @@
 
         <include
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             layout="@layout/header_layout"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
@@ -88,6 +88,15 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/navigation"
+            android:layout_marginBottom="-30dp"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/navigation"
+            android:layout_above="@+id/tv_address"
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>

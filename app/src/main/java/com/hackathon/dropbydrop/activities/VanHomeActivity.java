@@ -1,10 +1,12 @@
 package com.hackathon.dropbydrop.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -66,6 +68,15 @@ initHeader();
         mllCompleted.setBackgroundColor(getResources().getColor(R.color.color_f8f8f9));
         mllRescheduled.setBackgroundColor(getResources().getColor(R.color.color_f8f8f9));
         mListView = (ListView) findViewById(R.id.listview_van_home);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(VanHomeActivity.this, VanGoActivity.class);
+                intent.putExtra(Constants.SELECTED_ITEM_POSITION,position);
+                startActivity(intent);
+            }
+        });
         mVanHouseAdapter = new VanHouseAdapter(this, R.layout.item_details, getItems(status), Constants.VANNOTIFICATIONHOME);
         mListView.setAdapter(mVanHouseAdapter);
         mllPending.setOnClickListener(new View.OnClickListener() {

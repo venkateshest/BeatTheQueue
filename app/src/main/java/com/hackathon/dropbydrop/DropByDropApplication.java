@@ -174,7 +174,6 @@ public class DropByDropApplication extends Application {
     public static void getCurrentLocation() {
         gps = new GPSTracker(mContext);
         if (gps.canGetLocation()) {
-
             currentLat = gps.getLatitude();
             currentLong = gps.getLongitude();
 

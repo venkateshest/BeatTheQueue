@@ -49,11 +49,11 @@ public class VanHouseAdapter extends ArrayAdapter<NotificationDTO> {
 
                 if (type.equalsIgnoreCase(Constants.NOTIFICATIONS)) {
                     txtDonarName.setText(rowItem.getName());
-                    txtDonarTime.setText("8-9 Am");
+                    txtDonarTime.setText("8-9 AM");
                     txtDonarAddress.setText(rowItem.getBloodGroup());
                 } else if (type.equalsIgnoreCase(Constants.VANNOTIFICATIONHOME)) {
                     txtDonarName.setText(rowItem.getName());
-                    txtDonarTime.setText("8-9 Am");
+                    txtDonarTime.setText("8-9 AM");
                     txtDonarAddress.setText(rowItem.getAddress());
                 }
 
