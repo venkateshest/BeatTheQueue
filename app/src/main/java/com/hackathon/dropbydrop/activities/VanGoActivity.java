@@ -12,6 +12,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.hackathon.dropbydrop.R;
+import com.hackathon.dropbydrop.adapter.VanHouseAdapter;
 import com.hackathon.dropbydrop.utils.MapWrapperLayout;
 
 /**
@@ -26,6 +27,7 @@ public class VanGoActivity extends AppCompatActivity {
     EditText location;
     TextView phoneNo;
     Button start;
+    VanHouseAdapter mVanHouseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
