@@ -1,8 +1,10 @@
 package com.hackathon.dropbydrop;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.hackathon.dropbydrop.data.NotificationDTO;
+import com.hackathon.dropbydrop.utils.GPSTracker;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,11 +17,20 @@ public class DropByDropApplication extends Application {
     public static ArrayList<NotificationDTO> mVanNotifications= new ArrayList<>();
     public static ArrayList<NotificationDTO> mUserNotifications= new ArrayList<>();
 
+    // GPS Location
+   public static GPSTracker gps;
+    public static final double US_LAT = 37.09024;
+    public static final double US_LONG = -95.712891;
+    public static double currentLat = US_LAT;
+    public static double currentLong = US_LONG;
+    public static Context mContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
         addDummyDataforNotifications();
         addDummyDataforVanNotifications();
+        mContext=this;
 
     }
     public static void addDummyDataforVanNotifications(){
@@ -159,5 +170,14 @@ public class DropByDropApplication extends Application {
         date.setLongt(77.6997663);
         date.setDateTime(new Date().getTime() - 10000);
         mVanNotifications.add(date);
+    }
+    public static void getCurrentLocation() {
+        gps = new GPSTracker(mContext);
+        if (gps.canGetLocation()) {
+
+            currentLat = gps.getLatitude();
+            currentLong = gps.getLongitude();
+
+        }
     }
 }

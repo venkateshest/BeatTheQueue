@@ -39,12 +39,14 @@ public class VanHomeActivity extends AppCompatActivity {
     VanHouseAdapter mVanHouseAdapter;
     String status = "pending";
 
+    private ImageView mImgViewHeadBack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_van_home);
-
+initHeader();
         tvCompleteCount = (TextView) findViewById(R.id.tv_completed_count);
         tvPendingCount = (TextView) findViewById(R.id.tv_pending_count);
         tvReScheduleCount = (TextView) findViewById(R.id.tv_reschedule_count);
@@ -144,5 +146,14 @@ public class VanHomeActivity extends AppCompatActivity {
             }
         }
         return count;
+    }
+    private void initHeader(){
+        mImgViewHeadBack = (ImageView) findViewById(R.id.iv_head_back);
+        TextView textViewHeaderText = (TextView) findViewById(R.id.header_text);
+        ImageView ivNotification = (ImageView) findViewById(R.id.notification);
+        textViewHeaderText.setText("Donors for today");
+        mImgViewHeadBack.setBackground(getDrawable(R.mipmap.back_white));
+        mImgViewHeadBack.setVisibility(View.GONE);
+        ivNotification.setVisibility(View.GONE);
     }
 }
