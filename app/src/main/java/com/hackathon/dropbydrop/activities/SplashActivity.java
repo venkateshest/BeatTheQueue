@@ -26,6 +26,7 @@ public class SplashActivity extends AppCompatActivity {
         mDrdSharedPreferences = new DRDSharedPreferences(this);
         if (mDrdSharedPreferences.getString(StringConstants.PREF_GCM_REG_ID, "").equals(""))
             mGcmManager.registerToGCM(this);
+        System.out.print("GCM ID: "+mDrdSharedPreferences.getString(StringConstants.PREF_GCM_REG_ID, ""));
     }
 
     private Handler messageHandler = new Handler() {

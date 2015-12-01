@@ -9,11 +9,30 @@ public class NotificationDTO {
     private String bloodGroup;
     private double lat;
     private double longt;
-    private long dateTime;
+    private String dateTime;
     private String address;
     private String status;
     private int applicationId;
     private String phoneNo;
+    private String toTime;
+
+    public void setToTime(String toTime) {
+        this.toTime = toTime;
+    }
+
+    public void setFromTime(String fromTime) {
+        this.fromTime = fromTime;
+    }
+
+    public String getToTime() {
+        return toTime;
+    }
+
+    public String getFromTime() {
+        return fromTime;
+    }
+
+    private String fromTime;
 
     public String getPhoneNo() {
         return phoneNo;
@@ -56,11 +75,11 @@ public class NotificationDTO {
         this.address = address;
     }
 
-    public double getDateTime() {
+    public String getDate() {
         return dateTime;
     }
 
-    public void setDateTime(long dateTime) {
+    public void setDate(String dateTime) {
         this.dateTime = dateTime;
     }
 
