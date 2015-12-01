@@ -18,9 +18,12 @@ import android.widget.Toast;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
+import com.hackathon.dropbydrop.DropByDropApplication;
 import com.hackathon.dropbydrop.R;
+import com.hackathon.dropbydrop.data.NotificationDTO;
 import com.hackathon.dropbydrop.reusable.constants.StringConstants;
 import com.hackathon.dropbydrop.utils.MapWrapperLayout;
+import com.hackathon.dropbydrop.utils.UIUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -63,8 +66,8 @@ public class DonateActivity extends AppCompatActivity {
                 intent.putExtra(StringConstants.DONATE_DATE, selectedDate);
                 intent.putExtra(StringConstants.DONATE_FROM_TIME, selectedFromTime);
                 intent.putExtra(StringConstants.DONATE_TO_TIME, selectedToTime);
-                intent.putExtra(StringConstants.DONATE_AT_LAT, "");
-                intent.putExtra(StringConstants.DONATE_AT_LONG, "");
+                intent.putExtra(StringConstants.DONATE_AT_LAT, DropByDropApplication.currentLat);
+                intent.putExtra(StringConstants.DONATE_AT_LONG, DropByDropApplication.currentLong);
                 startActivity(intent);
             }
         });

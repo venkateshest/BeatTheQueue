@@ -43,7 +43,7 @@ public class DropByDropApplication extends Application {
         date.setBloodGroup("Need B+ve blood donor");
         date.setLat(12.9511982);
         date.setLongt(77.6997663);
-        date.setDateTime(new Date().getTime() - 10000);
+        date.setDate(new Date().getTime() - 10000+"");
         date.setStatus("pending");
         mVanNotifications.add(date);
 
@@ -53,7 +53,7 @@ public class DropByDropApplication extends Application {
         date.setBloodGroup("Need B+ve blood donor");
         date.setLat(12.9511982);
         date.setLongt(77.6997663);
-        date.setDateTime(new Date().getTime() - 30000);
+        date.setDate(new Date().getTime() - 30000+"");
         date.setStatus("completed");
         mVanNotifications.add(date);
 
@@ -65,7 +65,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.910491);
         date.setStatus("pending");
         date.setLongt(77.5857168);
-        date.setDateTime(new Date().getTime() - 20000);
+        date.setDate(new Date().getTime() - 20000+"");
         mVanNotifications.add(date);
 
         date= new NotificationDTO();
@@ -76,7 +76,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.9511982);
         date.setStatus("pending");
         date.setLongt(77.6997663);
-        date.setDateTime(new Date().getTime() - 10000);
+        date.setDate(new Date().getTime() - 10000+"");
         mVanNotifications.add(date);
 
         date= new NotificationDTO();
@@ -87,7 +87,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.9172106);
         date.setStatus("Completed");
         date.setLongt(77.6228464);
-        date.setDateTime(new Date().getTime() - 10000);
+        date.setDate(new Date().getTime() - 10000+"");
         mVanNotifications.add(date);
 
         date= new NotificationDTO();
@@ -98,7 +98,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.9511982);
         date.setStatus("pending");
         date.setLongt(77.6997663);
-        date.setDateTime(new Date().getTime() - 10000);
+        date.setDate(new Date().getTime() - 10000+"");
         mVanNotifications.add(date);
 
         date= new NotificationDTO();
@@ -109,7 +109,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.9511982);
         date.setStatus("Re-scheduled");
         date.setLongt(77.6997663);
-        date.setDateTime(new Date().getTime() - 10000);
+        date.setDate(new Date().getTime() - 10000+"");
         mVanNotifications.add(date);
 
         date= new NotificationDTO();
@@ -120,7 +120,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.9329463);
         date.setStatus("Completed");
         date.setLongt(77.5838692);
-        date.setDateTime(new Date().getTime()-10000);
+        date.setDate(new Date().getTime() - 10000+"");
         mVanNotifications.add(date);
 
         date= new NotificationDTO();
@@ -131,7 +131,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.9329463);
         date.setStatus("Re-scheduled");
         date.setLongt(77.5838692);
-        date.setDateTime(new Date().getTime()-10000);
+        date.setDate(new Date().getTime() - 10000+"");
         mVanNotifications.add(date);
 
     }
@@ -145,7 +145,7 @@ public class DropByDropApplication extends Application {
         date.setBloodGroup("Need B+ve blood donor");
         date.setLat(12.9511982);
         date.setLongt(77.6997663);
-        date.setDateTime(new Date().getTime() - 10000);
+        date.setDate(new Date().getTime() - 10000+"");
         date.setStatus("pending");
         mVanNotifications.add(date);
 
@@ -157,7 +157,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.9511982);
         date.setStatus("pending");
         date.setLongt(77.6997663);
-        date.setDateTime(new Date().getTime() - 10000);
+        date.setDate(new Date().getTime() - 10000+"");
         mVanNotifications.add(date);
 
         date= new NotificationDTO();
@@ -168,7 +168,7 @@ public class DropByDropApplication extends Application {
         date.setLat(12.9511982);
         date.setStatus("pending");
         date.setLongt(77.6997663);
-        date.setDateTime(new Date().getTime() - 10000);
+        date.setDate(new Date().getTime() - 10000+"");
         mVanNotifications.add(date);
     }
     public static void getCurrentLocation() {

@@ -1,12 +1,15 @@
 package com.hackathon.dropbydrop.reusable.constants;
 
 
+import org.json.JSONArray;
+
 public class StringConstants {
     public static final String GCM_SERVER_KEY = "AIzaSyD6RtaxRyILkrme5SKJ0FqXgqOsJdaCGWY";
     public static final String GCM_ANDROID_KEY = "AIzaSyCr3voUnWodkCqjkTK0QBVkBKR7uhQyAYc";
     public static final String SAMPLE_GCM_DEVICE_REG_ID = "APA91bEjurx6nIONEac2kFvZc8IlAXE27H1aC5hvAlFpns6gIBn0eFTbIWcGYSFo0uqaOn3rq5yi-p58V0A6r2zHgVZmtvHdqJOKoYJ39vZ6SjOXS92zD5b_NtbDezSLCuhmUtMZTP04BvQJsO6sG5bD2bzlb65xDcTjk1YruxKl5m5JhvKvRow";
     public static final String GCM_SENDER_ID = "691854834657";
-
+    public static final String GCM_OFFICE_NEXUS = "APA91bFSH87cK0uTuXP3PmDKVNgtGldmD5PG5lG8EsxH0L6VSh_XOqXaBBvI3XtrdUkKwcZx5bq8t7TcsknO1H_tAOk0sAlFX8vjvOiEDcaiCEPES-LBbX99-uizQdBuYXQCm9hJFBZ5";
+    public static final String GCM_VENKI_NEXUS = "";
 
     public static final String PREF_GCM_REG_ID = "PREF_GCM_REG_ID";
     public static String PREF_DONAR_USERNAME = "DONAR_USERNAME";
