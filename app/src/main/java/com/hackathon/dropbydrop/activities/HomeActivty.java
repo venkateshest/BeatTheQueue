@@ -1,5 +1,6 @@
 package com.hackathon.dropbydrop.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -7,9 +8,7 @@ import android.widget.ImageView;
 
 import com.hackathon.dropbydrop.R;
 
-/**
- * Created by venkatesh.kolla on 12/1/2015.
- */
+
 public class HomeActivty extends AppCompatActivity {
 
     private ImageView mIvDonate;
@@ -27,7 +26,8 @@ public class HomeActivty extends AppCompatActivity {
         mIvDonate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(HomeActivty.this, DonateActivity.class);
+                startActivity(intent);
             }
         });
         mIvProfile.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +39,8 @@ public class HomeActivty extends AppCompatActivity {
         mIvRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(HomeActivty.this, RequestActivity.class);
+                startActivity(intent);
             }
         });
     }
