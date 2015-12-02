@@ -12,12 +12,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.hackathon.dropbydrop.DropByDropApplication;
 import com.hackathon.dropbydrop.R;
 import com.hackathon.dropbydrop.data.NotificationDTO;
@@ -45,6 +52,8 @@ public class DonateActivity extends AppCompatActivity {
     String selectedDate;
     String selectedFromTime;
     String selectedToTime;
+    private RelativeLayout rrHeader;
+    private ImageView iv_noti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +62,19 @@ public class DonateActivity extends AppCompatActivity {
         mMapView = (MapView) findViewById(R.id.stop_details_map);
         mWrapperLayout = (MapWrapperLayout) findViewById(R.id.wrapperlayout_stop_details_map);
         mMapView.onCreate(savedInstanceState);
+
+
         location = (EditText) findViewById(R.id.et_location);
+        location.setText("3rd phase, JP Nagar, Bangalore");
         etDate = (EditText) findViewById(R.id.et_date);
         etFromTime = (EditText) findViewById(R.id.from_picker);
         etToTime = (EditText) findViewById(R.id.to_picker);
+        TextView textViewHeaderText = (TextView) findViewById(R.id.header_text);
+        textViewHeaderText.setText(R.string.lbl_donate_blood);
+        rrHeader = (RelativeLayout) findViewById(R.id.main_header);
+        rrHeader.setBackgroundColor(getResources().getColor(R.color.color_E6D13C3C));
+        iv_noti = (ImageView) findViewById(R.id.notification);
+        iv_noti.setBackground(getResources().getDrawable(R.mipmap.notification_white_complete));
         mBtnMoreDetails = (Button) findViewById(R.id.more_details);
         mBtnMoreDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +87,7 @@ public class DonateActivity extends AppCompatActivity {
                 intent.putExtra(StringConstants.DONATE_AT_LAT, DropByDropApplication.currentLat);
                 intent.putExtra(StringConstants.DONATE_AT_LONG, DropByDropApplication.currentLong);
                 startActivity(intent);
+                DonateActivity.this.finish();
             }
         });
         etDate.setOnTouchListener(new View.OnTouchListener() {
@@ -130,6 +149,14 @@ public class DonateActivity extends AppCompatActivity {
             map.getUiSettings().setZoomControlsEnabled(false);
             map.setMyLocationEnabled(false);
             map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            map.addMarker(new MarkerOptions().position(new LatLng(DropByDropApplication.currentLat,
+                    DropByDropApplication.currentLong)))
+                    .setIcon(
+                            BitmapDescriptorFactory
+                                    .fromResource(R.mipmap.current_location_ico_mpl));
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                    new LatLng(DropByDropApplication.currentLat,
+                            DropByDropApplication.currentLong), 10));
         } catch (Exception exception) {
 
         }
@@ -157,7 +184,6 @@ public class DonateActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker arg0, int year, int month, int day) {
             month = month+1;
-            Toast.makeText(DonateActivity.this, "year:: " + year + " month " + month + " day " + day, Toast.LENGTH_LONG).show();
             SimpleDateFormat formatter = new SimpleDateFormat("dd MM yyyy");
             SimpleDateFormat formatter1 = new SimpleDateFormat("MMMM dd, yyyy");
             String dateInString = day+" "+month+" "+year;

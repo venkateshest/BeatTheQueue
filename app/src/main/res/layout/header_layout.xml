@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/more_white" />
+            android:background="@mipmap/more_white" />
 
         <ImageView
             android:id="@+id/notification"
@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="21dp"
             android:layout_toStartOf="@+id/option_menu"
-            android:src="@mipmap/bell_white" />
+            android:background="@mipmap/bell_white" />
 
         <ImageView
             android:id="@+id/iv_head_back"
@@ -53,14 +53,5 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/iv_app_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@mipmap/lets_save_a_life"
-        android:visibility="gone" />
+
 </RelativeLayout>

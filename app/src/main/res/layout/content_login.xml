@@ -17,9 +17,9 @@
         android:gravity="right"
         android:layoutDirection="rtl"
         android:lineSpacingExtra="5dp"
-        android:paddingBottom="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="80dp"
+        android:paddingBottom="30dp"
+        android:paddingRight="15dp"
+        android:paddingTop="40dp"
         android:text="@string/lbl_login_header"
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_heading_size"
@@ -31,7 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_login_header"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/logo_layers" />
+        android:background="@drawable/logo_layers"
+        android:paddingTop="@dimen/margin_20dp" />
 
     <com.hackathon.dropbydrop.reusable.CustomTextView
         android:id="@+id/tv_username"
@@ -52,6 +53,8 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:hint="@string/lbl_hint_username"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
         android:textSize="@dimen/text_normal_size"
         app:font="@string/avenir_book" />
 
@@ -100,6 +103,7 @@
         android:layout_below="@+id/btn_sign_in"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:layout_marginTop="@dimen/margin_10dp"
         android:text="@string/lbl_forgot_pwd"
         android:textSize="@dimen/text_login_small_size"
         app:font="@string/avenir_roman" />
@@ -110,6 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/btn_sign_in"
         android:layout_below="@+id/btn_sign_in"
+        android:layout_marginTop="@dimen/margin_10dp"
         android:text="@string/lbl_sign_up"
         android:textColor="#E54848"
         android:textSize="@dimen/text_login_small_size"

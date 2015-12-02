@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         } else if (mETUsername.getText().toString().contains(drdSharedPreferences.getString(StringConstants.PREF_AMBULANCE_USERNAME, ""))
                 && mETPassword.getText().toString().contains(drdSharedPreferences.getString(StringConstants.PREF_AMBULANCE_PASSWORD, ""))) {
             drdSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_AMBULANCE);
+            startActivity(new Intent(LoginActivity.this, VanHomeActivity.class));
         } else {
             mETUsername.setText("");
             mETPassword.setText("");

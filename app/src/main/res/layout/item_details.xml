@@ -1,53 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <RelativeLayout
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <com.hackathon.dropbydrop.reusable.CustomTextView
-            android:id="@+id/tv_donor_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="8dp"
 
-            android:text="Venkatesh"
-            android:gravity="left"
-            android:textColor="#801D1D26"
-            android:textSize="18sp"
-            app:font="@string/avenir_book" />
-        <com.hackathon.dropbydrop.reusable.CustomTextView
-            android:id="@+id/tv_item_schedule_time"
+        <ImageView
+            android:id="@+id/iv_drop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:drawablePadding="6dp"
-            android:drawableRight="@mipmap/pending"
-            android:gravity="center"
-            android:text="8-10 am"
-            android:textColor="#801D1D26"
-            android:textSize="18sp"
-            app:font="@string/avenir_book"
             android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:background="@mipmap/notification_drop_red" />
+
+        <RelativeLayout
+            android:id="@+id/rr_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_drop"
+            android:orientation="horizontal">
+
+            <com.hackathon.dropbydrop.reusable.CustomTextView
+                android:id="@+id/tv_donor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="8dp"
+
+                android:gravity="left"
+                android:text="Venkatesh"
+                android:textColor="#801D1D26"
+                android:textSize="18sp"
+                app:font="@string/avenir_book" />
+
+            <com.hackathon.dropbydrop.reusable.CustomTextView
+                android:id="@+id/tv_item_schedule_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:drawablePadding="6dp"
+                android:drawableRight="@mipmap/pending"
+                android:gravity="center"
+                android:text="8-10 am"
+                android:textColor="#801D1D26"
+                android:textSize="18sp"
+                app:font="@string/avenir_book" />
+        </RelativeLayout>
+
+        <com.hackathon.dropbydrop.reusable.CustomTextView
+            android:id="@+id/tv_item_addres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rr_item"
+            android:layout_gravity="left"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/iv_drop"
+            android:singleLine="true"
+            android:text="H No:9,3 rd cross,Manjunath layout,Marathahalli,Bangalore"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:font="@string/avenir_book" />
+
     </RelativeLayout>
-    <com.hackathon.dropbydrop.reusable.CustomTextView
-        android:id="@+id/tv_item_addres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="left"
-        android:text="H No:9,3 rd cross,Manjunath layout,Marathahalli,Bangalore"
-        android:singleLine="true"
-        android:layout_marginBottom="8dp"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:font="@string/avenir_book" />
 </LinearLayout>

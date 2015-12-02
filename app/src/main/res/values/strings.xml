@@ -31,4 +31,10 @@
     <string name="lbl_any_diseases">ANY DISEASES?</string>
     <string name="lbl_hint_disease_details">Mention the name here, seperated by commas.</string>
     <string name="lbl_done">DONE</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="lbl_your_profile">Your Profile</string>
+    <string name="lbl_profile_name">Saneet Naik</string>
+    <string name="lbl_donate_blood">Donate Blood</string>
+    <string name="lbl_request_help">Request Help</string>
+    <string name="lbl_notifications">Notifications</string>
 </resources>

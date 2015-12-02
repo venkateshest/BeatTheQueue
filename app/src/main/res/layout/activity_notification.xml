@@ -7,12 +7,13 @@
     android:fitsSystemWindows="true"
     tools:context="com.hackathon.dropbydrop.activities.NotificationActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <include
+            android:id="@+id/header"
             layout="@layout/header_layout"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -22,6 +23,7 @@
             android:id="@+id/listView_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
             android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

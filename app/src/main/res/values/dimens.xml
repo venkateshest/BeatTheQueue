@@ -7,7 +7,12 @@
     <dimen name="text_normal_size">15sp</dimen>
     <dimen name="text_login_small_size">12sp</dimen>
     <dimen name="background_text_size">15sp</dimen>
+    <dimen name="text_size_valud">18sp</dimen>
     <dimen name="background_ans_text_size">15sp</dimen>
     <dimen name="padding_between_views">15dp</dimen>
     <dimen name="difference_after_action">5dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_50dp">50dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
 </resources>

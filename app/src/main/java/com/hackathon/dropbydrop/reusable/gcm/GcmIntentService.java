@@ -18,13 +18,19 @@ package com.hackathon.dropbydrop.reusable.gcm;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.hackathon.dropbydrop.R;
+import com.hackathon.dropbydrop.activities.NotificationActivity;
 import com.hackathon.dropbydrop.activities.SplashActivity;
+import com.hackathon.dropbydrop.activities.VanHomeActivity;
+import com.hackathon.dropbydrop.repo.DRDSharedPreferences;
+import com.hackathon.dropbydrop.reusable.constants.StringConstants;
 
 import android.app.IntentService;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
@@ -46,11 +52,13 @@ public class GcmIntentService extends IntentService {
         super("GcmIntentService");
     }
     public static final String TAG = "GCM Demo";
+    private DRDSharedPreferences drdSharedPreferences;
 
     @Override
     protected void onHandleIntent(Intent intent) {
         Bundle extras = intent.getExtras();
         GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
+        drdSharedPreferences = new DRDSharedPreferences(this);
         // The getMessageType() intent parameter must be the intent you received
         // in your BroadcastReceiver.
         String messageType = gcm.getMessageType(intent);
@@ -68,8 +76,10 @@ public class GcmIntentService extends IntentService {
             // If it's a regular GCM message, do some work.
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
                 // Post notification of received message.
-                sendNotification("Received: " + extras.toString());
-                Log.i(TAG, "Received: " + extras.toString());
+                String msg = extras.toString().split("\\[")[1];
+                msg = intent.getStringExtra("payLoad");
+                sendNotification(msg);
+                Log.i(TAG, "Received: " + msg);
             }
         }
         // Release the wake lock provided by the WakefulBroadcastReceiver.
@@ -82,23 +92,35 @@ public class GcmIntentService extends IntentService {
     private void sendNotification(String msg) {
         mNotificationManager = (NotificationManager)
                 this.getSystemService(Context.NOTIFICATION_SERVICE);
+        PendingIntent contentIntent = null;
+        if (drdSharedPreferences.getString(StringConstants.PREF_APP_TYPE, "").contains(StringConstants.APP_TYPE_NON_AMBULANCE)) {
+            Intent intent = new Intent(this, NotificationActivity.class);
+            intent.putExtra("msg", msg);
+            contentIntent = PendingIntent.getActivity(this, 0,
+                   intent , 0);
+        } else {
+            Intent intent = new Intent(this, VanHomeActivity.class);
+            intent.putExtra("msg", msg);
+            contentIntent = PendingIntent.getActivity(this, 0,
+                    intent, 0);
+        }
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, SplashActivity.class), 0);
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
-        .setSmallIcon(R.drawable.notification_template_icon_bg)
-        .setContentTitle("GCM Notification")
-        .setStyle(new NotificationCompat.BigTextStyle()
-        .bigText(msg))
-        .setContentText(msg);
+                        .setSmallIcon(R.mipmap.lets_save_a_life)
 
+                        .setContentTitle("DropByDrop")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("DropByDrop"))
+                        .setContentText(msg);
+        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.mipmap.lets_save_a_life);
+        mBuilder.setLargeIcon(largeIcon);
         mBuilder.setContentIntent(contentIntent);
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-        
-        Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-		vibrator.vibrate(1000);
-		Log.e("GCMBroadcastReceiver", ">>>>>>>>>>>>>>Msg Received");
+
+        Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(1000);
+        Log.e("GCMBroadcastReceiver", ">>>>>>>>>>>>>>Msg Received");
     }
 }

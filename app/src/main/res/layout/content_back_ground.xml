@@ -29,7 +29,8 @@
                 <ImageView
                     android:id="@+id/iv_donar_image"
                     android:layout_width="80dp"
-                    android:layout_height="80dp" />
+                    android:layout_height="80dp"
+                    android:background="@mipmap/small_profile_page" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -112,6 +113,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/tv_donar_age"
                         android:layout_weight="0.5"
+                        android:inputType="number"
                         android:textColor="@color/color_1D1D26"
                         android:textSize="@dimen/background_text_size"
                         app:font="@string/avenir_book" />
@@ -122,6 +124,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/tv_donar_age"
                         android:layout_weight="0.5"
+                        android:inputType="number"
                         android:textColor="@color/color_1D1D26"
                         android:textSize="@dimen/background_text_size"
                         app:font="@string/avenir_book" />
