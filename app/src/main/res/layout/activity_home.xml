@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:fitsSystemWindows="true"
-    tools:context="com.hackathon.dropbydrop.activities.HomeActivty">
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:background="@color/white"
+                                                 android:fitsSystemWindows="true"
+                                                 tools:context="com.hackathon.BeatTheQueue.activities.HomeActivty">
 
     <RelativeLayout
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/profile_pic"
@@ -19,13 +18,13 @@
             android:layout_height="260dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:background="@color/color_848383" />
+            android:background="@color/color_848383"/>
 
         <include
             layout="@layout/header_layout"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"/>
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -33,11 +32,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/profile_pic"
             android:layout_centerHorizontal="true"
-            android:background="@color/white"
             android:layout_marginTop="10dp"
+            android:background="@color/white"
             android:orientation="vertical">
 
-            <com.hackathon.dropbydrop.reusable.CustomTextView
+            <TextView
                 android:id="@+id/tv_profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,9 +46,9 @@
                 android:text="@string/lbl_profile_name"
                 android:textColor="@color/color_525663"
                 android:textSize="28dp"
-                app:font="@string/avenir_book" />
+                />
 
-            <com.hackathon.dropbydrop.reusable.CustomTextView
+            <TextView
                 android:id="@+id/tv_profile_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,7 +58,7 @@
                 android:text="Bangalore,Karnataka"
                 android:textColor="@color/color_848383"
                 android:textSize="18dp"
-                app:font="@string/avenir_book" />
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -88,9 +87,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@mipmap/donate" />
+                        android:src="@mipmap/donate"/>
 
-                    <com.hackathon.dropbydrop.reusable.CustomTextView
+                    <TextView
                         android:id="@+id/tv_grid_donate_lbl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -100,7 +99,7 @@
                         android:text="Donate"
                         android:textColor="@color/color_848383"
                         android:textSize="18dp"
-                        app:font="@string/avenir_book" />
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -114,9 +113,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@mipmap/request" />
+                        android:src="@mipmap/request"/>
 
-                    <com.hackathon.dropbydrop.reusable.CustomTextView
+                    <TextView
                         android:id="@+id/tv_grid_request_lbl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -126,7 +125,7 @@
                         android:text="Request"
                         android:textColor="@color/color_848383"
                         android:textSize="18dp"
-                        app:font="@string/avenir_book" />
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -140,9 +139,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@mipmap/history" />
+                        android:src="@mipmap/history"/>
 
-                    <com.hackathon.dropbydrop.reusable.CustomTextView
+                    <TextView
                         android:id="@+id/tv_grid_history_lbl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -152,7 +151,7 @@
                         android:text="History"
                         android:textColor="@color/color_848383"
                         android:textSize="18dp"
-                        app:font="@string/avenir_book" />
+                        />
                 </LinearLayout>
             </LinearLayout>
 
@@ -173,9 +172,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@mipmap/friends" />
+                        android:src="@mipmap/friends"/>
 
-                    <com.hackathon.dropbydrop.reusable.CustomTextView
+                    <TextView
                         android:id="@+id/tv_grid_friends_lbl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -185,7 +184,7 @@
                         android:text="Friends"
                         android:textColor="@color/color_848383"
                         android:textSize="18dp"
-                        app:font="@string/avenir_book" />
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -199,9 +198,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@mipmap/profile_icon" />
+                        android:src="@mipmap/profile_icon"/>
 
-                    <com.hackathon.dropbydrop.reusable.CustomTextView
+                    <TextView
                         android:id="@+id/tv_grid_profile_lbl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -211,7 +210,7 @@
                         android:text="Profile"
                         android:textColor="@color/color_848383"
                         android:textSize="18dp"
-                        app:font="@string/avenir_book" />
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -225,9 +224,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@mipmap/donate" />
+                        android:src="@mipmap/donate"/>
 
-                    <com.hackathon.dropbydrop.reusable.CustomTextView
+                    <TextView
                         android:id="@+id/tv_grid_settings_lbl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -237,12 +236,13 @@
                         android:text="Settings"
                         android:textColor="@color/color_848383"
                         android:textSize="18dp"
-                        app:font="@string/avenir_book" />
+                        />
                 </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
+
     <ImageView
         android:id="@+id/iv_app_icon"
         android:layout_width="wrap_content"
@@ -250,5 +250,5 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:background="@mipmap/lets_save_a_life" />
+        android:background="@mipmap/beat_the_queue"/>
 </android.support.design.widget.CoordinatorLayout>

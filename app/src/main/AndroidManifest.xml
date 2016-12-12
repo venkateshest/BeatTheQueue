@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- suppress ALL -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hackathon.dropbydrop" >
+<manifest package="com.hackathon.BeatTheQueue"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="22" />
+        android:targetSdkVersion="22"/>
 
     <!-- GCM connects to Google Services. -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!-- GCM requires a Google account. -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <!-- Keeps the processor from sleeping when a message is received. -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <!--
          Creates a custom permission so only this app can receive its messages.
 
@@ -22,125 +22,68 @@
     -->
     <permission
         android:name="com.google.android.gcm.demo.app.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
+        android:protectionLevel="signature"/>
 
-    <uses-permission android:name="com.google.android.gcm.demo.app.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.gcm.demo.app.permission.C2D_MESSAGE"/>
     <!-- This app has permission to register and receive data message. -->
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-    <permission
-        android:name="com.hackathon.dropbydrop.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.hackathon.dropbydrop.permission.MAPS_RECEIVE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
-        android:name=".DropByDropApplication"
+        android:name=".BTQApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/lets_save_a_life"
+        android:icon="@mipmap/beat_the_queue"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activities.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".activities.HomeActivty"
             android:label="@string/title_activity_login"
             android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" >
-
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activities.DonateActivity"
-            android:label="@string/title_activity_login"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" >
-
-        </activity>
-        <activity
-            android:name=".activities.NotificationActivity"
-            android:label="@string/title_activity_login"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".activities.RequestActivity"
-            android:label="@string/title_activity_login"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".activities.VanGoActivity"
-            android:label="@string/title_activity_login"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activities.VanHomeActivity"
-            android:label="@string/title_activity_login"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
         <receiver
             android:name=".reusable.gcm.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
 
                 <!-- Receives the actual messages. -->
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
                 <!-- Receives the registration id. -->
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
 
-                <category android:name="com.google.android.gcm.demo.app" />
+                <category android:name="com.google.android.gcm.demo.app"/>
             </intent-filter>
         </receiver>
 
-        <service android:name=".reusable.gcm.GcmIntentService" />
+        <service android:name=".reusable.gcm.GcmIntentService"/>
 
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyC0VyL8AP1id0BJabusZEAeJBbD6zFYXJE" />
-
-        <service android:name=".reusable.gcm.GcmIntentService" />
-
-        <activity
-            android:name=".activities.BackGroundActivity"
-            android:label="@string/title_activity_back_ground"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".activities.ProfileActivity"
-            android:label="@string/title_activity_profile"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.NoActionBar">
-
+        <activity android:name=".activities.CartViewActivity">
         </activity>
     </application>
 

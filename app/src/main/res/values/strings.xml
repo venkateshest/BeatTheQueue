@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DropByDrop</string>
+    <string name="app_name">BeatTheQueue</string>
     <string name="preferences">PREFERENCES</string>
 
     <string name="hello_world">Hello world!</string>
@@ -7,10 +7,6 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="lbl_login_header">Now you don\'t have to be a \n Superhero to save lives</string>
 
-    <string name="roboto_bold">Roboto-Bold.ttf</string>
-    <string name="roboto_regular">Roboto-Regular.ttf</string>
-    <string name="avenir_book">Avenir.ttc</string>
-    <string name="avenir_roman">Avenir_Roman.otf</string>
     <string name="lbl_username">Username</string>
     <string name="lbl_pwd">Password</string>
     <string name="lbl_sign_in">SIGN IN</string>

@@ -38,7 +38,7 @@
             android:layout_marginLeft="15dp"
             android:background="@mipmap/back_white" />
 
-        <com.hackathon.dropbydrop.reusable.CustomTextView
+        <TextView
             android:id="@+id/header_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             android:text="Let's save a life"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:font="@string/roboto_regular" />
+            />
 
 
     </RelativeLayout>
