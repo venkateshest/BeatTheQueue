@@ -3,12 +3,14 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical"
+              android:orientation="horizontal"
               android:padding="10dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="9">
 
         <RelativeLayout
             android:id="@+id/rr_item"
@@ -40,21 +42,8 @@
                 android:textSize="18sp"/>
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tv_total_amt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/rr_item"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Amount"
-
-            android:textColor="#000000"
-            android:textSize="20sp"/>
-
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rr_item"
             android:layout_marginTop="8dp"
@@ -63,11 +52,11 @@
             <TextView
                 android:id="@+id/tv_quantity_minus"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_gravity="left"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_bg_btn"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="-"
                 android:textColor="#ffffff"
                 android:textSize="20sp"/>
@@ -75,10 +64,10 @@
             <TextView
                 android:id="@+id/tv_quantity_amount"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_gravity="left"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="0"
                 android:textColor="#000000"
                 android:textSize="20sp"/>
@@ -86,15 +75,32 @@
             <TextView
                 android:id="@+id/tv_quantity_plus"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_gravity="right"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_bg_btn"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="+"
                 android:textColor="#ffffff"
                 android:textSize="20sp"/>
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tv_total_amt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="Amount"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+
     </RelativeLayout>
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="delete"/>
 </LinearLayout>
