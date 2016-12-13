@@ -49,31 +49,40 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
 
         TextView txtItemName = (TextView) view.findViewById(R.id.tv_item_name);
         TextView txtAmount = (TextView) view.findViewById(R.id.tv_item_amount);
-        TextView totalAmount = (TextView) view.findViewById(R.id.tv_total_amt);
+        final TextView totalAmount = (TextView) view.findViewById(R.id.tv_total_amt);
         TextView txtMinus = (TextView) view.findViewById(R.id.tv_quantity_minus);
-        TextView txtNoOfQuantity = (TextView) view.findViewById(R.id.tv_quantity_amount);
+        final TextView txtNoOfQuantity = (TextView) view.findViewById(R.id.tv_quantity_amount);
         TextView txtPlus = (TextView) view.findViewById(R.id.tv_quantity_plus);
 
 
         txtItemName.setText(rowItem.name);
-        txtAmount.setText("" + rowItem.perKGPrice);
-        txtNoOfQuantity.setText(""+rowItem.quantity);
+        txtAmount.setText(rowItem.perKGPrice + "/kg");
+        txtNoOfQuantity.setText(rowItem.quantity);
+
         totalAmount.setText("" + (rowItem.quantity * rowItem.perKGPrice));
 
 
         txtMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                int qty = rowItem.quantity;
+                if (qty >= 1) {
+                    qty = qty - 1;
+                }
+                txtNoOfQuantity.setText(qty);
+                totalAmount.setText("" + (qty * rowItem.perKGPrice));
 
             }
         });
         txtPlus.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-
+            public void onClick(View view) {
+                int qty = rowItem.quantity;
+                qty = qty + 1;
+                txtNoOfQuantity.setText(qty);
+                totalAmount.setText("" + (qty * rowItem.perKGPrice));
             }
+
         });
 
 
