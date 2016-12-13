@@ -73,8 +73,8 @@ public class SimpleScannerActivity extends BaseScannerActivity implements ZXingS
     @Override
     public void callCart() {
         super.callCart();
-        Intent intent = new Intent(getApplicationContext(),CartViewActivity.class);
-        intent.putParcelableArrayListExtra("items",cartdetails);
+        Intent intent = new Intent(getApplicationContext(), CartViewActivity.class);
+        intent.putParcelableArrayListExtra("items", cartdetails);
         startActivity(intent);
     }
 
@@ -85,7 +85,7 @@ public class SimpleScannerActivity extends BaseScannerActivity implements ZXingS
         if (BTQApplication.cartItemsDTOs.containsKey(rawResult.getText())) {
             cartdetails.add(BTQApplication.cartItemsDTOs.get(rawResult.getText()));
         }
-        updateCart("" + (cartdetails.size() + 1));
+        updateCart("" + cartdetails.size());
 
         // Note:
         // * Wait 2 seconds to resume the preview.

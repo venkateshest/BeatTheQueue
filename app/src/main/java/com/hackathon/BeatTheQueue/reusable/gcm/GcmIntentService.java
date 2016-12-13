@@ -101,13 +101,13 @@ public class GcmIntentService extends IntentService {
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.mipmap.lets_save_a_life)
+                        .setSmallIcon(R.mipmap.beat_the_queue)
 
-                        .setContentTitle("DropByDrop")
+                        .setContentTitle("QLS")
                         .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText("DropByDrop"))
+                                .bigText("QLS"))
                         .setContentText(msg);
-        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.mipmap.lets_save_a_life);
+        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.mipmap.beat_the_queue);
         mBuilder.setLargeIcon(largeIcon);
         mBuilder.setContentIntent(contentIntent);
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());

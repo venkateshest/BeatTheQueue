@@ -54,10 +54,9 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
         final TextView txtNoOfQuantity = (TextView) view.findViewById(R.id.tv_quantity_amount);
         TextView txtPlus = (TextView) view.findViewById(R.id.tv_quantity_plus);
 
-
         txtItemName.setText(rowItem.name);
         txtAmount.setText(rowItem.perKGPrice + "/kg");
-        txtNoOfQuantity.setText(rowItem.quantity);
+        txtNoOfQuantity.setText(""+rowItem.quantity);
 
         totalAmount.setText("" + (rowItem.quantity * rowItem.perKGPrice));
 

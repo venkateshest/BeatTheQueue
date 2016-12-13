@@ -1,5 +1,10 @@
 package com.hackathon.BeatTheQueue.activities;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,6 +40,30 @@ public class CartViewActivity extends AppCompatActivity {
         cartList.setAdapter(adapter);
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        IntentFilter iff = new IntentFilter("ADDEDTOCART");
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, iff);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
+    }
+
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent != null) {
+                String str = intent.getStringExtra("key");
+                //Get all your data from intent and do what you want
+            }
+        }
+    };
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
