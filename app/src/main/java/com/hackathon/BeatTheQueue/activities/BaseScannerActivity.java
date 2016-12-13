@@ -15,7 +15,7 @@ public class BaseScannerActivity extends AppCompatActivity {
         //displaying custom ActionBar
         View mActionBarView = getLayoutInflater().inflate(R.layout.my_action_bar, null);
         actionBar.setCustomView(mActionBarView);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 
     }
 

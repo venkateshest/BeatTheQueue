@@ -48,7 +48,6 @@
             android:layout_gravity="left"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:singleLine="true"
             android:text="Quantity"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -69,7 +68,6 @@
                 android:layout_weight="1"
                 android:background="@drawable/rounded_bg_btn"
                 android:gravity="center_horizontal"
-                android:singleLine="true"
                 android:text="+"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
@@ -81,7 +79,6 @@
                 android:layout_gravity="left"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:singleLine="true"
                 android:text="0"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -94,7 +91,6 @@
                 android:layout_weight="1"
                 android:background="@drawable/rounded_bg_btn"
                 android:gravity="center_horizontal"
-                android:singleLine="true"
                 android:text="-"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
