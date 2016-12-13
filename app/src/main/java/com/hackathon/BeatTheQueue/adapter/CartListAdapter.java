@@ -72,6 +72,7 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
             @Override
             public void onClick(View v) {
 
+
             }
         });
 
