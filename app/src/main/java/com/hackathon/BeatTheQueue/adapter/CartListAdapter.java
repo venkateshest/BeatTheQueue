@@ -22,13 +22,18 @@ import java.util.List;
 public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
 
     private final Context context;
-    private final String type;
+    private String type;
 
 
     public CartListAdapter(final Context context, final int resourceId, final List<CartItemsDTO> items, String type) {
         super(context, resourceId, items);
         this.context = context;
         this.type = type;
+    }
+
+    public CartListAdapter(final Context context, final int resourceId, final List<CartItemsDTO> items) {
+        super(context, resourceId, items);
+        this.context = context;
     }
 
     public View getView(final int position, final View convertView, final ViewGroup parent) {
@@ -42,16 +47,27 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
 
         View view = mInflater.inflate(R.layout.item_details, null);
 
-       /* TextView txtDonarName = (TextView) view.findViewById(R.id.tv_donor_name);
-        TextView txtDonarTime = (TextView) view.findViewById(R.id.tv_item_schedule_time);
-        TextView txtDonarAddress = (TextView) view.findViewById(R.id.tv_item_addres);*/
+        TextView txtItemName = (TextView) view.findViewById(R.id.tv_item_name);
+        TextView txtAmount = (TextView) view.findViewById(R.id.tv_item_amount);
+        TextView totalAmount = (TextView) view.findViewById(R.id.tv_total_amt);
+        TextView txtMinus = (TextView) view.findViewById(R.id.tv_quantity_minus);
+        TextView txtNoOfQuantity = (TextView) view.findViewById(R.id.tv_quantity_amount);
+        TextView txtPlus = (TextView) view.findViewById(R.id.tv_quantity_plus);
 
 
-       /* if (type.equalsIgnoreCase(Constants.NOTIFICATIONS)) {
-            txtDonarName.setText(rowItem.name);
-            txtDonarTime.setText(rowItem.price);
-            txtDonarAddress.setText(rowItem.quantity);
-        }*/
+        txtItemName.setText(rowItem.name);
+        txtAmount.setText("" + rowItem.perKGPrice);
+        txtNoOfQuantity.setText(rowItem.quantity);
+        totalAmount.setText("" + (rowItem.quantity * rowItem.perKGPrice));
+
+
+        txtMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
 
 
         return view;

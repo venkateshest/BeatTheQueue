@@ -41,21 +41,21 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/tv_quantity"
+            android:id="@+id/tv_total_amt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_below="@+id/rr_item"
-            android:layout_gravity="left"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:text="Quantity"
+            android:text="Amount"
+
             android:textColor="#000000"
             android:textSize="20sp"/>
 
         <LinearLayout
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_below="@+id/rr_item"
             android:layout_marginTop="8dp"
             android:background="@drawable/rounded_bg">
@@ -68,7 +68,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rounded_bg_btn"
                 android:gravity="center_horizontal"
-                android:text="+"
+                android:text="-"
                 android:textColor="#ffffff"
                 android:textSize="20sp"/>
 
@@ -91,7 +91,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rounded_bg_btn"
                 android:gravity="center_horizontal"
-                android:text="-"
+                android:text="+"
                 android:textColor="#ffffff"
                 android:textSize="20sp"/>
         </LinearLayout>
