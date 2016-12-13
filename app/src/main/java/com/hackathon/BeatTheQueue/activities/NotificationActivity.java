@@ -53,8 +53,8 @@ public class NotificationActivity extends AppCompatActivity {
         textViewHeaderText.setText(R.string.lbl_notifications);
         RelativeLayout rrHeader = (RelativeLayout) findViewById(R.id.main_header);
         rrHeader.setBackgroundColor(getResources().getColor(R.color.color_D13C3C));
-        ImageView iv_noti = (ImageView) findViewById(R.id.notification);
-        iv_noti.setBackground(getResources().getDrawable(R.mipmap.notification_white_complete));
-        iv_noti.setVisibility(View.INVISIBLE);
+      //  ImageView iv_noti = (ImageView) findViewById(R.id.notification);
+      //  iv_noti.setBackground(getResources().getDrawable(R.mipmap.notification_white_complete));
+      //  iv_noti.setVisibility(View.INVISIBLE);
     }
 }

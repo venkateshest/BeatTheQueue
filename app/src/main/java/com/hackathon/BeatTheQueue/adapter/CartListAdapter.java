@@ -42,16 +42,16 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
 
         View view = mInflater.inflate(R.layout.item_details, null);
 
-        TextView txtDonarName = (TextView) view.findViewById(R.id.tv_donor_name);
+       /* TextView txtDonarName = (TextView) view.findViewById(R.id.tv_donor_name);
         TextView txtDonarTime = (TextView) view.findViewById(R.id.tv_item_schedule_time);
-        TextView txtDonarAddress = (TextView) view.findViewById(R.id.tv_item_addres);
+        TextView txtDonarAddress = (TextView) view.findViewById(R.id.tv_item_addres);*/
 
 
-        if (type.equalsIgnoreCase(Constants.NOTIFICATIONS)) {
+       /* if (type.equalsIgnoreCase(Constants.NOTIFICATIONS)) {
             txtDonarName.setText(rowItem.name);
             txtDonarTime.setText(rowItem.price);
             txtDonarAddress.setText(rowItem.quantity);
-        }
+        }*/
 
 
         return view;

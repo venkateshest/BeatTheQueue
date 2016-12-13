@@ -6,10 +6,14 @@ package com.hackathon.BeatTheQueue.data;
 public class CartItemsDTO {
 
     public String name;
-    public String dateTime;
-    public String quantity;
-    public String price;
-    public String perKGPrice;
+    public int quantity;
+    public double price;
+    public double perKGPrice;
 
-
+    public CartItemsDTO(String name, int quantity, double price, double perKGPrice) {
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+        this.perKGPrice = perKGPrice;
+    }
 }

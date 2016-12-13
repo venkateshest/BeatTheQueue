@@ -32,6 +32,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mBtnSignIn.setOnClickListener(this);
         mETUsername = (EditText) findViewById(R.id.et_usernmae);
         mETPassword = (EditText) findViewById(R.id.et_pwd);
+        mETUsername.setText("user@gmail.com");
+        mETPassword.setText("user");
 
     }
 
@@ -52,11 +54,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
                 && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_PASSWORD, ""))) {
             startActivity(new Intent(LoginActivity.this, HomeActivty.class));
-            BTQSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_NON_AMBULANCE);
+            finish();
         } else if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_REQUESTER_USERNAME, ""))
                 && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_REQUESTER_PASSWORD, ""))) {
             BTQSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_AMBULANCE);
             startActivity(new Intent(LoginActivity.this, CartViewActivity.class));
+            finish();
         } else {
             mETUsername.setText("");
             mETPassword.setText("");
