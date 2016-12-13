@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.hackathon.BeatTheQueue.R;
@@ -45,7 +46,7 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
         final LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
 
-        View view = mInflater.inflate(R.layout.item_details, null);
+        final View view = mInflater.inflate(R.layout.item_details, null);
 
         TextView txtItemName = (TextView) view.findViewById(R.id.tv_item_name);
         TextView txtAmount = (TextView) view.findViewById(R.id.tv_item_amount);
@@ -53,11 +54,12 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
         TextView txtMinus = (TextView) view.findViewById(R.id.tv_quantity_minus);
         final TextView txtNoOfQuantity = (TextView) view.findViewById(R.id.tv_quantity_amount);
         TextView txtPlus = (TextView) view.findViewById(R.id.tv_quantity_plus);
+        Button btnDelete = (Button) view.findViewById(R.id.btn_delete);
 
 
         txtItemName.setText(rowItem.name);
         txtAmount.setText(rowItem.perKGPrice + "/kg");
-        txtNoOfQuantity.setText(rowItem.quantity);
+        txtNoOfQuantity.setText(String.valueOf(rowItem.quantity));
 
         totalAmount.setText("" + (rowItem.quantity * rowItem.perKGPrice));
 
@@ -69,7 +71,7 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
                 if (qty >= 1) {
                     qty = qty - 1;
                 }
-                txtNoOfQuantity.setText(qty);
+                txtNoOfQuantity.setText(String.valueOf(qty));
                 totalAmount.setText("" + (qty * rowItem.perKGPrice));
 
             }
@@ -79,10 +81,16 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
             public void onClick(View view) {
                 int qty = rowItem.quantity;
                 qty = qty + 1;
-                txtNoOfQuantity.setText(qty);
+                txtNoOfQuantity.setText(String.valueOf(qty));
                 totalAmount.setText("" + (qty * rowItem.perKGPrice));
             }
 
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                view.setVisibility(View.GONE);
+            }
         });
 
 
