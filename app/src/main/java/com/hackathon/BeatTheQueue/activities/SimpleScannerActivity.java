@@ -1,6 +1,7 @@
 package com.hackathon.BeatTheQueue.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -67,6 +68,14 @@ public class SimpleScannerActivity extends BaseScannerActivity implements ZXingS
     public void onPause() {
         super.onPause();
         mScannerView.stopCamera();
+    }
+
+    @Override
+    public void callCart() {
+        super.callCart();
+        Intent intent = new Intent(getApplicationContext(),CartViewActivity.class);
+        intent.putParcelableArrayListExtra("items",cartdetails);
+        startActivity(intent);
     }
 
     @Override

@@ -26,8 +26,12 @@ public class BaseScannerActivity extends AppCompatActivity {
             finish();
         } else if (v.getId() == R.id.cart_view) {
             Toast.makeText(getApplicationContext(), "cart", Toast.LENGTH_LONG).show();
+            callCart();
         }
 
+    }
+
+    public void callCart() {
     }
 
     @Override

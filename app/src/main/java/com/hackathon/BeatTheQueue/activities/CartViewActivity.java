@@ -22,6 +22,7 @@ public class CartViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_layout);
+        items = getIntent().getParcelableArrayListExtra("items");
 
         cartList = (ListView) findViewById(R.id.ll_item_list);
 

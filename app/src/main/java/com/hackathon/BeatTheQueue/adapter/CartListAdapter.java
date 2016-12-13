@@ -58,6 +58,7 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
         txtItemName.setText(rowItem.name);
         txtAmount.setText(rowItem.perKGPrice + "/kg");
         txtNoOfQuantity.setText(rowItem.quantity);
+
         totalAmount.setText("" + (rowItem.quantity * rowItem.perKGPrice));
 
 
@@ -81,6 +82,7 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
                 txtNoOfQuantity.setText(qty);
                 totalAmount.setText("" + (qty * rowItem.perKGPrice));
             }
+
         });
 
 
