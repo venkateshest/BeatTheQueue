@@ -23,12 +23,15 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class SimpleScannerActivity extends BaseScannerActivity implements ZXingScannerView.ResultHandler {
     private ZXingScannerView mScannerView;
+    private boolean takeaway;
 
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
         setContentView(R.layout.activity_custom_view_finder_scanner);
+        takeaway = getIntent().getBooleanExtra("take_away", false);
         setupToolbar();
+
 
         ViewGroup contentFrame = (ViewGroup) findViewById(R.id.content_frame);
         mScannerView = new ZXingScannerView(this) {

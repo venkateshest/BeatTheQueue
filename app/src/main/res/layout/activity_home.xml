@@ -1,246 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:fitsSystemWindows="true"
-    tools:context="com.hackathon.BeatTheQueue.activities.HomeActivty">
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:background="@color/white"
+                                                 android:fitsSystemWindows="true"
+                                                 tools:context="com.hackathon.BeatTheQueue.activities.HomeActivty">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
-        <ImageView
-            android:id="@+id/profile_pic"
-            android:layout_width="match_parent"
-            android:layout_height="260dp"
+        <TextView
+            android:id="@+id/mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:background="@color/color_848383" />
+            android:text="Chooese the Mode of Shopping"
+            android:textSize="25dp"/>
 
-        <include
-            layout="@layout/header_layout"
+        <Button
+            android:id="@+id/take_away"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/profile_pic"
+            android:layout_below="@+id/mode"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:background="@color/white"
-            android:orientation="vertical">
+            android:text="Take Away"/>
 
-            <TextView
-                android:id="@+id/tv_profile_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_login_logo"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:text="@string/lbl_profile_name"
-                android:textColor="@color/color_525663"
-                android:textSize="28dp" />
-
-            <TextView
-                android:id="@+id/tv_profile_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_login_logo"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:gravity="center_vertical"
-                android:text="Bangalore,Karnataka"
-                android:textColor="@color/color_848383"
-                android:textSize="18dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/linearLayout"
+        <Button
+            android:id="@+id/home_delivery"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/take_away"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/iv_donate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/donate" />
-
-                    <TextView
-                        android:id="@+id/tv_grid_donate_lbl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/iv_login_logo"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:gravity="center_vertical"
-                        android:text="Donate"
-                        android:textColor="@color/color_848383"
-                        android:textSize="18dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/iv_request"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/request" />
-
-                    <TextView
-                        android:id="@+id/tv_grid_request_lbl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/iv_login_logo"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:gravity="center_vertical"
-                        android:text="Request"
-                        android:textColor="@color/color_848383"
-                        android:textSize="18dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/iv_history"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/history" />
-
-                    <TextView
-                        android:id="@+id/tv_grid_history_lbl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/iv_login_logo"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:gravity="center_vertical"
-                        android:text="History"
-                        android:textColor="@color/color_848383"
-                        android:textSize="18dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/iv_friends"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/friends" />
-
-                    <TextView
-                        android:id="@+id/tv_grid_friends_lbl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/iv_login_logo"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:gravity="center_vertical"
-                        android:text="Friends"
-                        android:textColor="@color/color_848383"
-                        android:textSize="18dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/iv_profile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/profile_icon" />
-
-                    <TextView
-                        android:id="@+id/tv_grid_profile_lbl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/iv_login_logo"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:gravity="center_vertical"
-                        android:text="Profile"
-                        android:textColor="@color/color_848383"
-                        android:textSize="18dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/iv_settings"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/donate" />
-
-                    <TextView
-                        android:id="@+id/tv_grid_settings_lbl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/iv_login_logo"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:gravity="center_vertical"
-                        android:text="Settings"
-                        android:textColor="@color/color_848383"
-                        android:textSize="18dp" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </LinearLayout>
+            android:text="Home Delivery"/>
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/iv_app_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:background="@mipmap/beat_the_queue" />
 </android.support.design.widget.CoordinatorLayout>

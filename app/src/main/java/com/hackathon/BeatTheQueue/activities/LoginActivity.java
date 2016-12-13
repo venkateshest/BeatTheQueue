@@ -35,21 +35,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void setSPValues() {
-        BTQSharedPreferences.putString(StringConstants.PREF_DONAR_USERNAME, "donar@gmail.com");
-        BTQSharedPreferences.putString(StringConstants.PREF_DONAR_PASSWORD, "donar");
+        BTQSharedPreferences.putString(StringConstants.PREF_DONAR_USERNAME, "user@gmail.com");
+        BTQSharedPreferences.putString(StringConstants.PREF_DONAR_PASSWORD, "user");
         BTQSharedPreferences.putString(StringConstants.PREF_DONAR_GCM_REG_ID, "");
-        BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_USERNAME, "requester@gmail.com");
-        BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_PASSWORD, "requester");
+        BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_USERNAME, "delivery@gmail.com");
+        BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_PASSWORD, "delivery");
         BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_GCM_REG_ID, "APA91bFzPYdjYG5hcjPkLm6fGlToclwCbYs0iOlZeY-LDpbFCf-Jv17QhvHoL7fynKnYb2Hk0vtKsHYbeZjWNbka0Ky1JM2EAIhU46M20_ACfCj3ybmoEGWjqAFVCYOU3OU22UkPuTfJ");
-        BTQSharedPreferences.putString(StringConstants.PREF_AMBULANCE_USERNAME, "ambulance@gmail.com");
-        BTQSharedPreferences.putString(StringConstants.PREF_AMBULANCE_PASSWORD, "ambulance");
-        BTQSharedPreferences.putString(StringConstants.PREF_AMBULANCE_GCM_REG_ID, "");
 
     }
 
     @Override
     public void onClick(View view) {
-       /* if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
+       if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
                 && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_PASSWORD, ""))) {
             startActivity(new Intent(LoginActivity.this, HomeActivty.class));
             BTQSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_NON_AMBULANCE);
@@ -60,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         } else {
             mETUsername.setText("");
             mETPassword.setText("");
-        }*/
-        startActivity(new Intent(LoginActivity.this, SimpleScannerActivity.class));
+        }
+
     }
 }
