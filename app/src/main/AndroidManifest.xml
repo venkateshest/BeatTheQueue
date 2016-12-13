@@ -28,9 +28,7 @@
     <!-- This app has permission to register and receive data message. -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
     <uses-permission android:name="android.permission.CAMERA"/>
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
@@ -67,7 +65,7 @@
             android:name=".activities.SimpleScannerActivity"
             android:label="Scan the code"
             android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"/>
 
         <receiver
             android:name=".reusable.gcm.GcmBroadcastReceiver"
@@ -86,6 +84,8 @@
         <service android:name=".reusable.gcm.GcmIntentService"/>
 
         <activity android:name=".activities.CartViewActivity">
+        </activity>
+        <activity android:name=".activities.CheckOutScreen">
         </activity>
     </application>
 

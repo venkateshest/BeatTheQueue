@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class CartViewActivity extends AppCompatActivity {
 
 
     ListView cartList;
+    Button checkout;
 
     List<CartItemsDTO> items = new ArrayList<>();
 
@@ -33,7 +35,14 @@ public class CartViewActivity extends AppCompatActivity {
         setContentView(R.layout.item_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         items = getIntent().getParcelableArrayListExtra("items");
-
+        checkout = (Button) findViewById(R.id.btn_checkout);
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CheckOutScreen.class));
+                finish();
+            }
+        });
         cartList = (ListView) findViewById(R.id.ll_item_list);
 
         CartListAdapter adapter = new CartListAdapter(this, R.layout.item_details, items);
