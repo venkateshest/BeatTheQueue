@@ -10,64 +10,95 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/iv_drop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/margin_10dp"
-            android:background="@mipmap/notification_drop_red" />
-
         <RelativeLayout
             android:id="@+id/rr_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/iv_drop"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tv_donor_name"
+                android:id="@+id/tv_item_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_marginTop="8dp"
-
                 android:gravity="left"
-                android:text="Venkatesh"
+                android:text="Name"
                 android:textColor="#801D1D26"
-                android:textSize="18sp"
-                 />
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/tv_item_schedule_time"
+                android:id="@+id/tv_item_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="right"
                 android:drawablePadding="6dp"
-                android:drawableRight="@mipmap/pending"
                 android:gravity="center"
-                android:text="8-10 am"
                 android:textColor="#801D1D26"
-                android:textSize="18sp"
-            />
+                android:textSize="18sp" />
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/tv_item_addres"
+            android:id="@+id/tv_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rr_item"
             android:layout_gravity="left"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:layout_toRightOf="@+id/iv_drop"
             android:singleLine="true"
-            android:text="H No:9,3 rd cross,Manjunath layout,Marathahalli,Bangalore"
+            android:text="Quantity"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/rr_item"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_bg">
+
+            <TextView
+                android:id="@+id/tv_quantity_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_bg_btn"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="+"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_quantity_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_quantity_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_bg_btn"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="-"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </LinearLayout>
 
     </RelativeLayout>
 </LinearLayout>

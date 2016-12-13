@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.hackathon.BeatTheQueue.R;
 import com.hackathon.BeatTheQueue.repo.BTQSharedPreferences;
@@ -46,11 +47,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void setSPValues() {
-        BTQSharedPreferences.putString(StringConstants.PREF_DONAR_USERNAME, "donar@gmail.com");
-        BTQSharedPreferences.putString(StringConstants.PREF_DONAR_PASSWORD, "donar");
+        BTQSharedPreferences.putString(StringConstants.PREF_DONAR_USERNAME, "salesperson@gmail.com");
+        BTQSharedPreferences.putString(StringConstants.PREF_DONAR_PASSWORD, "salesperson");
         BTQSharedPreferences.putString(StringConstants.PREF_DONAR_GCM_REG_ID, "");
-        BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_USERNAME, "requester@gmail.com");
-        BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_PASSWORD, "requester");
+        BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_USERNAME, "customer@gmail.com");
+        BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_PASSWORD, "customer");
         BTQSharedPreferences.putString(StringConstants.PREF_REQUESTER_GCM_REG_ID, "APA91bFzPYdjYG5hcjPkLm6fGlToclwCbYs0iOlZeY-LDpbFCf-Jv17QhvHoL7fynKnYb2Hk0vtKsHYbeZjWNbka0Ky1JM2EAIhU46M20_ACfCj3ybmoEGWjqAFVCYOU3OU22UkPuTfJ");
         BTQSharedPreferences.putString(StringConstants.PREF_AMBULANCE_USERNAME, "ambulance@gmail.com");
         BTQSharedPreferences.putString(StringConstants.PREF_AMBULANCE_PASSWORD, "ambulance");
@@ -60,14 +61,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
+//        if (mETPassword.getText().toString().isEmpty() || mETUsername.getText().toString().isEmpty()) {
+//            Toast.makeText(LoginActivity.this, "Please enter valid credential", Toast.LENGTH_SHORT).show();
+//        } else {
+//            startActivity(new Intent(LoginActivity.this, CartViewActivity.class));
+//        }
         if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
                 && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_PASSWORD, ""))) {
             startActivity(new Intent(LoginActivity.this, HomeActivty.class));
             BTQSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_NON_AMBULANCE);
-        } else if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_AMBULANCE_USERNAME, ""))
-                && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_AMBULANCE_PASSWORD, ""))) {
+        } else if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_REQUESTER_USERNAME, ""))
+                && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_REQUESTER_PASSWORD, ""))) {
             BTQSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_AMBULANCE);
-            startActivity(new Intent(LoginActivity.this, CartViewActivity.class));
+        startActivity(new Intent(LoginActivity.this, CartViewActivity.class));
         } else {
             mETUsername.setText("");
             mETPassword.setText("");

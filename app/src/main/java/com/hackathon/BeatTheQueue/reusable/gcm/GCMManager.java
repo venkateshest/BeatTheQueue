@@ -9,9 +9,6 @@ import com.hackathon.BeatTheQueue.reusable.constants.StringConstants;
 
 import java.io.IOException;
 
-/**
- * Created by ESTBLR\iqbal.shirol on 30/11/15.
- */
 public class GCMManager {
     private GoogleCloudMessaging mGCM;
     private String mRegID;

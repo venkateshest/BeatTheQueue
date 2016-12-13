@@ -2,8 +2,8 @@ package com.hackathon.BeatTheQueue.reusable.constants;
 
 
 public class StringConstants {
-    public static final String GCM_SERVER_KEY = "AIzaSyD6RtaxRyILkrme5SKJ0FqXgqOsJdaCGWY";
-    public static final String GCM_SENDER_ID = "691854834657";
+    public static final String GCM_SERVER_KEY = "AIzaSyBnJsU7081xwn3Jk-uR1HibRtJ6KbF4Tbw";
+    public static final String GCM_SENDER_ID = "1016561849044";
     public static final String PREF_GCM_REG_ID = "PREF_GCM_REG_ID";
     public static String PREF_DONAR_USERNAME = "DONAR_USERNAME";
     public static String PREF_DONAR_PASSWORD = "DONAR_PASSWORD";
