@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
 
-        if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
+        if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))) {
 
        /* if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
 
@@ -66,6 +66,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mETUsername.setText("");
             mETPassword.setText("");
         }*/
-        startActivity(new Intent(LoginActivity.this, SimpleScannerActivity.class));
+            startActivity(new Intent(LoginActivity.this, SimpleScannerActivity.class));
+        }
     }
 }
