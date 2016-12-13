@@ -33,17 +33,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mETUsername = (EditText) findViewById(R.id.et_usernmae);
         mETPassword = (EditText) findViewById(R.id.et_pwd);
 
-       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);*/
-
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
     private void setSPValues() {
@@ -61,12 +50,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-//        if (mETPassword.getText().toString().isEmpty() || mETUsername.getText().toString().isEmpty()) {
-//            Toast.makeText(LoginActivity.this, "Please enter valid credential", Toast.LENGTH_SHORT).show();
-//        } else {
-//            startActivity(new Intent(LoginActivity.this, CartViewActivity.class));
-//        }
+
         if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
+
+       /* if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
+
                 && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_PASSWORD, ""))) {
             startActivity(new Intent(LoginActivity.this, HomeActivty.class));
             BTQSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_NON_AMBULANCE);
@@ -77,6 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         } else {
             mETUsername.setText("");
             mETPassword.setText("");
-        }
+        }*/
+        startActivity(new Intent(LoginActivity.this, SimpleScannerActivity.class));
     }
 }
