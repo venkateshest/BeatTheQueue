@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.hackathon.BeatTheQueue.R;
 import com.hackathon.BeatTheQueue.repo.BTQSharedPreferences;
@@ -46,17 +47,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-       if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
+
+
+        if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_USERNAME, ""))
                 && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_DONAR_PASSWORD, ""))) {
             startActivity(new Intent(LoginActivity.this, HomeActivty.class));
             BTQSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_NON_AMBULANCE);
-        } else if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_AMBULANCE_USERNAME, ""))
-                && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_AMBULANCE_PASSWORD, ""))) {
+        } else if (mETUsername.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_REQUESTER_USERNAME, ""))
+                && mETPassword.getText().toString().contains(BTQSharedPreferences.getString(StringConstants.PREF_REQUESTER_PASSWORD, ""))) {
             BTQSharedPreferences.putString(StringConstants.PREF_APP_TYPE, StringConstants.APP_TYPE_AMBULANCE);
             startActivity(new Intent(LoginActivity.this, CartViewActivity.class));
         } else {
             mETUsername.setText("");
             mETPassword.setText("");
+
         }
 
     }

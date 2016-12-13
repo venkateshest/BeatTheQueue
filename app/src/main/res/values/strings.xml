@@ -10,6 +10,7 @@
     <string name="lbl_username">Username</string>
     <string name="lbl_pwd">Password</string>
     <string name="lbl_sign_in">SIGN IN</string>
+    <string name="lbl_check_out">CHECK OUT</string>
     <string name="lbl_hint_username">Enter username</string>
     <string name="lbl_hint_pwd">Enter password</string>
     <string name="lbl_forgot_pwd">FORGOT PASSWORD</string>

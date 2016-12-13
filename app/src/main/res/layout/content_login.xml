@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                tools:context="com.hackathon.BeatTheQueue.activities.LoginActivity"
-                tools:showIn="@layout/activity_login">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.hackathon.BeatTheQueue.activities.LoginActivity"
+    tools:showIn="@layout/activity_login">
 
     <TextView
         android:id="@+id/tv_login_header"
@@ -22,19 +22,18 @@
         android:paddingTop="40dp"
         android:text="No need to wait in line any more \nWalk with free hands while shopping "
         android:textColor="@android:color/white"
-        android:textSize="@dimen/text_heading_size"/>
+        android:textSize="@dimen/text_heading_size" />
 
     <TextView
         android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_20dp"
         android:layout_below="@+id/tv_login_header"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="@dimen/margin_20dp"
         android:text="@string/lbl_username"
         android:textColor="@color/login_username"
-        android:textSize="@dimen/text_normal_size"
-        />
+        android:textSize="@dimen/text_normal_size" />
 
     <EditText
         android:id="@+id/et_usernmae"
@@ -46,8 +45,9 @@
         android:hint="@string/lbl_hint_username"
         android:imeOptions="actionNext"
         android:inputType="textEmailAddress"
-        android:textSize="@dimen/text_normal_size"
-        />
+        android:textColor="@color/color_B3D13C3C"
+        android:textColorHint="@color/color_50d2c2"
+        android:textSize="@dimen/text_normal_size" />
 
     <TextView
         android:id="@+id/tv_pwd"
@@ -58,8 +58,7 @@
         android:layout_marginTop="30dp"
         android:text="@string/lbl_pwd"
         android:textColor="@color/login_username"
-        android:textSize="@dimen/text_normal_size"
-        />
+        android:textSize="@dimen/text_normal_size" />
 
     <EditText
         android:id="@+id/et_pwd"
@@ -70,8 +69,9 @@
         android:layout_marginRight="15dp"
         android:hint="@string/lbl_hint_pwd"
         android:inputType="textPassword"
-        android:textSize="@dimen/text_normal_size"
-        />
+        android:textColor="@color/color_B3D13C3C"
+        android:textColorHint="@color/color_50d2c2"
+        android:textSize="@dimen/text_normal_size" />
 
     <Button
         android:id="@+id/btn_sign_in"
@@ -85,7 +85,7 @@
         android:background="@color/colorPrimaryDark"
         android:text="@string/lbl_sign_in"
         android:textColor="@color/white"
-        android:typeface="sans"/>
+        android:typeface="sans" />
 
     <TextView
         android:id="@+id/tv_forgot_pwd"
@@ -96,8 +96,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="@dimen/margin_10dp"
         android:text="@string/lbl_forgot_pwd"
-        android:textSize="@dimen/text_login_small_size"
-        />
+        android:textSize="@dimen/text_login_small_size" />
 
     <TextView
         android:id="@+id/tv_sign_up"
@@ -108,13 +107,12 @@
         android:layout_marginTop="@dimen/margin_10dp"
         android:text="@string/lbl_sign_up"
         android:textColor="#E54848"
-        android:textSize="@dimen/text_login_small_size"
-        />
+        android:textSize="@dimen/text_login_small_size" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv_sign_up"
-        android:background="@color/white"/>
+        android:background="@color/white" />
 
 </RelativeLayout>
