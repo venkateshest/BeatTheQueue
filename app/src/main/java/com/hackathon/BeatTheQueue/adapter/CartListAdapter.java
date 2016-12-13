@@ -68,6 +68,12 @@ public class CartListAdapter extends ArrayAdapter<CartItemsDTO> {
 
             }
         });
+        txtPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 
         return view;
